@@ -1,0 +1,64 @@
+<html>
+<head>
+<script>
+
+var scopecount=0;
+function dscopes()
+{	
+	scopecount++;
+	scopecount1=scopecount+1;
+	
+	var str="<input type='text' id="+'scopes'+scopecount+" class='inputdesign' placeholder='Enter Scopes'/><br><div id='dscopes"+scopecount1+"'></div>"
+	
+	 scopedid='dscopes'+scopecount;
+	
+	console.log(scopedid);
+	document.getElementById(scopedid).innerHTML=str; 
+	
+	console.log("scopecount is",scopecount);
+	return scopedid;
+	}
+function addScopesAjax()
+{
+	var scopetypeArray=[];	
+	var scopes=document.getElementById('scopes').value;
+	scopetypeArray.push(scopes);
+	for(s=1;s<=scopecount;s++)
+	{	var scopes=document.getElementById('scopes'+s).value;
+		scopetypeArray.push(scopes);
+	}
+	document.getElementById('scopespass').value=scopetypeArray;
+	document.getElementById('scopesAdded').innerHTML="Scopes Added";
+}
+
+
+
+
+</script>
+
+
+
+
+</head>
+
+
+
+
+<label class="labeldesign"><b>scopes</b></label>
+<input type="text" id="scopes" class="inputdesign" />
+	<div id="dscopes1"></div>
+<input type="button" onclick="dscopes()" value="Add More Scopes" />
+<br>
+<br>
+<input type="button" onclick="addScopesAjax()" value="Save Scopes" />
+<div id="scopesAdded"></div>
+
+<form action="formtest.jsp" method="get">
+
+<input type="hidden" id="scopespass" path="Project.scopes" name="scopes" value="" />
+<input type="submit" value="Submit Form" />
+</body>
+</html>
+
+
+

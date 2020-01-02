@@ -1,0 +1,54 @@
+<html>
+<head>
+<script>
+var objcount=0;
+function dobjectives()
+{	
+	objcount++;
+	objcount1=objcount+1;
+	
+	var str="<input type='text' id="+'objectives'+objcount+" class='inputdesign' placeholder='Enter Objective'/><br><div id='dobjectives"+objcount1+"'></div>"
+	
+	 objdid='dobjectives'+objcount;
+	
+	console.log(objdid);
+	document.getElementById(objdid).innerHTML=str; 
+	
+	console.log("count is",objcount);
+	return objdid;
+	}
+function addOjectivesAjax()
+{
+	var objectivetypeArray=[];	
+	var objectives=document.getElementById('objectives').value;
+	objectivetypeArray.push(objectives);
+	for(j=1;j<=objcount;j++)
+	{	var objectives=document.getElementById('objectives'+j).value;
+		objectivetypeArray.push(objectives);
+	}
+	document.getElementById('objectivepass').value=objectivetypeArray;
+	document.getElementById('ObjectiveAdded').innerHTML="Objectives Added";
+}
+</script>
+</head>
+<body>
+<link rel="stylesheet" href="design.css">
+<label path="objectives" class="labeldesign"><b>Objectives</b></form:label>
+<input id="objectives" type="text" path="objectives" class="inputdesign" placeholder='Enter Objective' />
+<br>
+<br>
+<div id="dobjectives1"></div>
+<input type="button" onclick="dobjectives()" class="inputdesign" value="Add More Objectives" />
+<br>
+<br>
+<input type="button" onclick="addOjectivesAjax()" class="inputdesign" value="Save Objectives" />
+<br>
+<div class="inputdesign" id="ObjectiveAdded"></div>
+<br>
+</label>
+<form action="formtest.jsp" method="get">
+
+<input type="hidden" id="objectivepass" path="Project.objective" name="objectives" value="" />
+<input type="submit" value="Submit Form" />
+</body>
+</html>

@@ -1,0 +1,64 @@
+.labeldesign
+{
+
+margin-left: 10em
+}
+.inputdesign
+{
+	position:absolute; 
+	left:480px;
+	width:400px
+	
+}
+
+.checkboxdesign
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:left;
+        align:center; 
+        padding-left: 475px;
+	
+}
+
+
+.Center
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:center;
+        align:center; 
+        padding-left: 250px;
+	
+}
+
+.Center2
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:left;
+        align:Left; 
+        padding-left: 20px;
+	
+}
+
+.Center1
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:center;
+        align:center; 
+   
+	
+}
+
+.Center3
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:center;
+        align:center; 
+        padding-right: 200px;
+   
+	
+}

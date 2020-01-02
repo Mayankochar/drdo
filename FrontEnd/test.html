@@ -1,0 +1,192 @@
+<html>
+<head>
+<script>
+
+
+
+
+
+
+function anyfunction(str)
+{
+document.getElementById('divid').innerHTML=str;
+}
+</script>
+<script>
+var count=0;
+function dfunddetails()
+{	
+	count++;
+	count1=count+1;
+	
+	var str="<br><select class='form:labeldesign' id="+'fundtype'+count+"><option value='revenue'>Revenue</option><option value='capital'>Capital</option></select><input type='text' id="+'idminh'+count+" class='inputdesign' placeholder='Minor Head'/><br><input type='text' id="+'idit'+count+" class='inputdesign' placeholder='Item Type'/><br><input type='text' id="+'idic'+count+" class='inputdesign' placeholder='IC'/><br><input type='text' id="+'idfe'+count+" class='inputdesign' placeholder='FE'/><br><div id='dfunddetails"+count1+"'></div>"
+	
+	 did='dfunddetails'+count;
+	
+	console.log(did);
+	document.getElementById(did).innerHTML=str; 
+	
+	console.log("count is",count);
+	return did;
+	}
+
+
+</script>
+<script>
+function addFundAjax()
+{
+	var fundtypeArray=[];
+	var fundminh=[];
+	var fundit=[];
+	var fundic=[];
+	var fundfe=[];
+console.log('inside add fund');
+var element=document.getElementById('fundtype').value;
+var hiddenidminh=document.getElementById('idminh').value;
+var hiddenidit=document.getElementById('idit').value;
+var hiddenidic=document.getElementById('idic').value;
+var hiddenidfe=document.getElementById('idfe').value;
+console.log('before loop ',element);
+fundtypeArray.push(element);
+fundminh.push(hiddenidminh);
+fundit.push(hiddenidit);
+fundic.push(hiddenidic);
+fundfe.push(hiddenidfe);
+
+		console.log("Element is ",element);
+
+	
+	for(i=1;i<=count;i++)
+	{	var element=document.getElementById('fundtype'+i).value;
+		
+		var hiddenidminh=document.getElementById('idminh'+i).value;
+		var hiddenidit=document.getElementById('idit'+i).value;
+		var hiddenidic=document.getElementById('idic'+i).value;
+		var hiddenidfe=document.getElementById('idfe'+i).value;
+		
+		fundtypeArray.push(element);
+		
+		fundminh.push(hiddenidminh);
+		fundit.push(hiddenidit);
+		fundic.push(hiddenidic);
+		fundfe.push(hiddenidfe);
+		
+		console.log("Element is ",element);
+	}
+
+
+document.getElementById('hiddenfundtype').value=fundtypeArray;
+document.getElementById('hiddenit').value=fundit;
+document.getElementById('hiddenic').value=fundic;
+document.getElementById('hiddenfe').value=fundfe;
+document.getElementById('hiddenminh').value=fundminh;
+
+document.getElementById('FundAddedSucessfully').innerHTML="Fund Added Sucessfully";
+}
+</script>
+<script>
+var objcount=0;
+function dobjectives()
+{	
+	objcount++;
+	objcount1=objcount+1;
+	
+	var str="<input type='text' id="+'objectives'+objcount+" class='inputdesign' placeholder='Enter Objective'/><br><div id='dobjectives"+objcount1+"'></div>"
+	
+	 objdid='dobjectives'+objcount;
+	
+	console.log(objdid);
+	document.getElementById(objdid).innerHTML=str; 
+	
+	console.log("count is",objcount);
+	return objdid;
+	}
+function addOjectivesAjax()
+{
+	var objectivetypeArray=[];	
+	var objectives=document.getElementById('objectives').value;
+	objectivetypeArray.push(objectives);
+	for(j=1;j<=objcount;j++)
+	{	var objectives=document.getElementById('objectives'+j).value;
+		objectivetypeArray.push(objectives);
+	}
+	document.getElementById('objectivepass').value=objectivetypeArray;
+	document.getElementById('ObjectiveAdded').innerHTML="Objectives Added";
+}
+</script>
+</head>
+<body>
+
+<input type="text" id='t'/>
+<select id="s">
+<option value="First">First</option>
+<option value="Second">Second</Second>
+</select>
+<select id="d">
+<option value="Third">3</option>
+<option value="Fourth">4</Second>
+</select>
+<br>
+<div id='did'></div>
+<input type="button" value="ClickMe" onclick="anyfunction(s.value+';'+d.value+';'+t.value)" />
+<br>
+<br>
+<label path="project.fundDetails" class="labeldesign"><b>FundDetails</b></form:label>
+<br>
+
+
+
+
+<select class='labeldesign' id='fundtype'>
+<option value='revenue'>Revenue</option>
+<option value='capital'>Capital</option>
+</select>
+<input type='text' path='project.fundDetails.minor_head' class='inputdesign' placeholder="Minor Head" id='idminh'/>
+<br>
+<input type='text' path='project.fundDetails.item' class='inputdesign' placeholder="Item Type" id='idit'/>
+<br>
+<input type='text' path='project.fundDetails.ic' class='inputdesign' placeholder="IC" id='idic' />
+<br>
+<input type='text' path='project.fundDetails.fe' class='inputdesign' placeholder="FE" id='idfe' />
+<br>
+
+
+<div id="dfunddetails1"></div>
+<input type="button"
+ onclick="dfunddetails()" value="Add More Funds" /><input type="button" onclick="addFundAjax()" value="Submit Funds" />
+<div id="FundAddedSucessfully"></div>
+<br>
+<br>
+
+<label path="objectives" class="labeldesign"><b>Objectives</b></form:label>
+<input id="objectives" type="text" path="objectives" class="inputdesign" placeholder='Enter Objective' />
+<br>
+<br>
+<div id="dobjectives1"></div>
+<input type="button" onclick="dobjectives()" class="inputdesign" value="Add More Objectives" />
+<br>
+<br>
+<input type="button" onclick="addOjectivesAjax()" class="inputdesign" value="Save Objectives" />
+<br>
+<div class="inputdesign" id="ObjectiveAdded"></div>
+<br>
+</label>
+
+
+<form action="" method="get">
+
+<input type="hidden" id="hiddenfundtype" path="FundDetails.type" name="fundType" value="" />
+<input type="hidden" id="hiddenit" path="FundDetails.item" name="item" value="" />
+<input type="hidden" id="hiddenic" path="FundDetails.ic" name="ic" value="" />
+<input type="hidden" id="hiddenfe" path="FundDetails.fe" name="fe" value="" />
+<input type="hidden" id="hiddenminh" path="FundDetails.minor_head" name="minor_head" value="" />
+<input type="hidden" id="objectivepass" path="Project.objective" name="objectives" value="" />
+<input type="submit" value="submit" />
+</form>
+
+
+
+
+
+</body>
+</html>

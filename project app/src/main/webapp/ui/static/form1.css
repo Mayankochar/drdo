@@ -1,0 +1,101 @@
+.labeldesign
+{
+
+margin-left: 10em
+}
+.inputdesign
+{
+	position:absolute; 
+	left:480px;
+	width:400px;
+	text-transform:uppercase
+}
+
+.checkboxdesign
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:left;
+        align:center; 
+        padding-left: 475px;
+	
+}
+
+
+.Center
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:center;
+        align:center; 
+        padding-left: 250px;
+	
+}
+
+.Center2
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:left;
+        align:Left; 
+        padding-left: 20px;
+	
+}
+
+.Center1
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:center;
+        align:center; 
+   
+	
+}
+
+.Center3
+{
+	margin:0px 0px; 
+        padding:0px;
+        text-align:center;
+        align:center; 
+        padding-right: 200px;
+   
+	
+}
+
+
+.button					/* button for yellow color*/
+{
+	position:absolute; 
+	left:480px;
+	width:400px;
+	background-color:yellow;
+}
+
+
+.button1			/* button of blue color */
+{
+	position:absolute; 
+	left:480px;
+	width:400px;
+	background-color:blue;
+	color:white
+}
+
+.button2			/* for submit button of the form	*/
+{
+	position:absolute; 
+	left:480px;
+	width:400px;
+	background-color:#4CAF50;
+	color:white;
+}
+.transform{
+	border: 1px solid;
+	width: 10%;
+	font: 17px Times New Roman;
+	margin-left: 35px;
+}
+input.ex1 {
+	margin-left: 300px;
+}
